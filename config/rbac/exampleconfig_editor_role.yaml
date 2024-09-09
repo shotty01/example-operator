@@ -1,0 +1,27 @@
+# permissions for end users to edit exampleconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: example-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: exampleconfig-editor-role
+rules:
+- apiGroups:
+  - test.example.com
+  resources:
+  - exampleconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - test.example.com
+  resources:
+  - exampleconfigs/status
+  verbs:
+  - get
