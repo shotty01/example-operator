@@ -7,3 +7,5 @@ metadata:
   name: exampleconfig-sample
 spec:
   # TODO(user): Add fields here
+  eventCount: 2
+  messageContent: "bla"
