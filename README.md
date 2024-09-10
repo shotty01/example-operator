@@ -1,8 +1,17 @@
 # example-operator
-// TODO(user): Add simple overview of use/purpose
+This is just an example to show how easy writing your own operator is
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+This operator was created by using the scaffolding from operator-sdk by applying the following commands
+### Initialize Repo
+Please change domain and repo to fit your needs, as well as the api group in the second command
+The resource is a cluster resource in this example -> switch to namespaced by using namespaced=true flag
+```sh
+operator-sdk init --domain example.com --repo github.com/shotty01/example-operator
+operator-sdk create api --group test --version v1beta1 --kind ExampleConfig --resource --controller --namespaced=false
+```
+
+The rest was defining the custom resource as code and implementing the Reconcile Method
 
 ## Getting Started
 
